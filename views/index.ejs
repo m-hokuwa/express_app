@@ -3,9 +3,17 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/libs/bootstrap.min.css' />
   </head>
   <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">Express</a>
+    </nav>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <p>Welcome to <%= AppName %></p>
+
+    <script src="/javascripts/libs/jquery-3.3.1.min.js"></script>
+    <script src="/javascripts/libs/popper.min.js"></script>
+    <script src="/javascripts/libs/bootstrap.min.js"></script>
   </body>
 </html>

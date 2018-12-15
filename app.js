@@ -3,6 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+// Basic認証
+var basicAuth = require('basic-auth-connect');
+
+// configファイル読込
+var app_config = require('./config/config');
+
+//console.log(app_config);
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
