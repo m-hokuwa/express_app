@@ -11,8 +11,11 @@ var app_config = require('./config/config');
 
 //console.log(app_config);
 
+// https://domain/*にアクセスしたときのルート
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+
+// https://domain/users/*にアクセスにアクセスしたときのルート
+var imgupRouter = require('./routes/imgup/imgup');
 
 var app = express();
 
@@ -27,7 +30,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/imgup', imgupRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

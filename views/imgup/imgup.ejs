@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/libs/bootstrap.min.css' />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">Express</a>
+    </nav>
+    <h1><%= title %></h1>
+    <p><%= AppName %></p>
+
+    <form method="POST" id="up-photo" action="/imgup/upload" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="File">画像のアップロード</label>
+        <input type="file" class="form-control-file" id="File" name="image">
+        <button type="submit" class="btn-primary">送信</button>
+      </div>
+    </form>
+    <div id="result"></div>
+
+    <script src="/javascripts/libs/jquery-3.3.1.min.js"></script>
+    <script src="/javascripts/libs/popper.min.js"></script>
+    <script src="/javascripts/libs/bootstrap.min.js"></script>
+    <script src="/javascripts/send.js"></script>
+    
+  </body>
+</html>
