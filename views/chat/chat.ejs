@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/libs/bootstrap.min.css' />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">Express</a>
+    </nav>
+    <h1><%= title %></h1>
+    <p><%= AppName %></p>
+    <div class="mx-auto chat-main">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a href="#tab1" class="nav-link active" data-toggle="tab">タブ1</a>
+        </li>
+        <li class="nav-item">
+          <a href="#tab2" class="nav-link" data-toggle="tab">タブ2</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="chat-talk tab-pane active card card-body" id="tab1">
+          <p1>タブ１、チャットがここに表示される予定</p1>
+        </div>
+        <div class="chat-talk tab-pane card card-body" id="tab2">
+          <p1>タブ２、チャットがここに表示される予定</p1>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <textarea class="form-control chat-input" rows="2" placeholder="ここに質問を入力してください"></textarea>
+      </div>
+    </div>
+
+    <script src="/javascripts/libs/jquery-3.3.1.min.js"></script>
+    <script src="/javascripts/libs/popper.min.js"></script>
+    <script src="/javascripts/libs/bootstrap.min.js"></script>
+    
+  </body>
+</html>

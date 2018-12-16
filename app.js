@@ -17,6 +17,9 @@ var indexRouter = require('./routes/index');
 // https://domain/users/*にアクセスにアクセスしたときのルート
 var imgupRouter = require('./routes/imgup/imgup');
 
+// https://domain/chat/*にアクセスにアクセスしたときのルート
+var chatRouter = require('./routes/chat/chat');
+
 var app = express();
 
 // view engine setup
@@ -31,6 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/imgup', imgupRouter);
+app.use('/chat', chatRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
