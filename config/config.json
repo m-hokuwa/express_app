@@ -1,6 +1,6 @@
 {
     "basic-auth" : {
-        "username" : "",
-        "password" : ""
+        "username" : "admin",
+        "password" : "password"
     }
 }

@@ -42,3 +42,62 @@ $('#up-photo').submit(function(event){
     });
 
 });
+
+$('#msg-send').click(function(){
+
+    // テキストエリアの入力値を取得
+    var text = $("#message").val();
+
+    // 入力を見る
+    if(text.length === 0){
+        console.log("入力が空");
+        return;
+    }
+
+    // 有効化されているタブを検知する
+    var active_tab = document.getElementsByClassName('nav-link active show');
+
+    // active tabの長さが0の場合タブ１
+    if(active_tab.length == 0){
+        console.log("送信がおされた タブ1");
+        msgSendAndRecv(msgRender, "/chat/tab1", text);
+    }
+    else{
+        if(active_tab[0].text == "タブ1"){
+            console.log("送信がおされた タブ1");
+            msgSendAndRecv(msgRender, "/chat/tab1", text);
+        }
+        else if(active_tab[0].text == "タブ2"){
+            console.log("送信がおされた タブ2");
+            msgSendAndRecv(msgRender, "/chat/tab2", text);
+        }
+        else{
+            console.log("ちょっと意味わからない");
+        }
+    }
+
+});
+
+function msgSendAndRecv(callback, requrl, reqmsg){
+
+    console.log(reqmsg);
+
+    $.ajax({
+        url: requrl,
+        type: "POST",
+        data: {"msg": reqmsg},
+        timeout: 10000,
+        dataType : 'json'
+ 
+    }).done(function(res){
+        //console.log('SUCCESS', res);
+        callback(res.recv);
+    }).fail(function(jqXHR, textStatus, errorThrown){
+        console.log('ERROR', jqXHR, textStatus, errorThrown);
+    });
+
+}
+
+function msgRender(msg){
+    console.log("Receive", msg);
+}

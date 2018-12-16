@@ -7,12 +7,21 @@ router.get('/', function(req, res, next) {
 });
 
 /* POSTされた時の処理 */
-router.post('/send', function(req, res, next) {
+router.post('/tab1', function(req, res, next) {
   
-  // この辺に画像に関する処理を書けばOK
-  
+  // 
+  console.log("受信メッセージ1:", req.body.msg);
   // クライアントにJSON形式でReceive
-  res.send({recv : '送信完了'});
+  res.send({recv : 'タブ1にSend and Receive'});
+});
+
+/* POSTされた時の処理 */
+router.post('/tab2', function(req, res, next) {
+  
+  // 
+  console.log("受信メッセージ2", req.body.msg);
+  // クライアントにJSON形式でReceive
+  res.send({recv : 'タブ２にSend and Receive'});
 });
 
 module.exports = router;

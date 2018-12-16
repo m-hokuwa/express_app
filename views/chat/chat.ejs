@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title><%= title %></title>  
     <link rel='stylesheet' href='/stylesheets/libs/bootstrap.min.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -22,21 +22,33 @@
       </ul>
       <div class="tab-content">
         <div class="chat-talk tab-pane active card card-body" id="tab1">
-          <p1>タブ１、チャットがここに表示される予定</p1>
+            <div class="container row no-gutters">
+              <!-- この２行が１列 -->
+              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">Watson側</div>
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+              <!-- ここが１列 -->
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 d-flex justify-content-end">ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</div>
+            </div>
         </div>
         <div class="chat-talk tab-pane card card-body" id="tab2">
           <p1>タブ２、チャットがここに表示される予定</p1>
         </div>
       </div>
       
-      <div class="form-group">
-        <textarea class="form-control chat-input" rows="2" placeholder="ここに質問を入力してください"></textarea>
+      <div class="form-group containaer row no-gutters">
+        <div class="col-xs-10 col-sm-10 col-md-11 col-lg-11">
+          <textarea id="message" class="form-control chat-input" rows="2" placeholder="ここに質問を入力してください"></textarea>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1 btn-success d-flex align-items-center justify-content-center" id="msg-send">
+          送信
+        </div> 
       </div>
     </div>
 
     <script src="/javascripts/libs/jquery-3.3.1.min.js"></script>
     <script src="/javascripts/libs/popper.min.js"></script>
     <script src="/javascripts/libs/bootstrap.min.js"></script>
-    
+    <script src="/javascripts/send.js"></script>
   </body>
 </html>
